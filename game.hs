@@ -223,7 +223,7 @@ gameCombatInit lvls idx grd pos newPos plr = do
         "! You cannot leave the battle or heal yourself." )
     wait
 
-    -- display the battle cry of the boss
+    -- display the intro of the boss
     let boss = getLevelBoss $ getLvl idx lvls
     putStrLn $ (getBossName boss) ++ ":\n\t\"" ++ (getBossIntro boss) ++ "\""
     wait
@@ -298,7 +298,7 @@ gameCombatPlrAttack lvls idx grd pos plr newPos = do
         clear
         putStrLn $ "You defeated " ++ (getBossName boss) ++ "!" -- provide feedback on the boss the user has defeated
         wait
-        -- display the battle cry of the boss
+        -- display the outro of the boss
         putStrLn $ (getBossName boss) ++ ":\n\t\"" ++ (getBossOutro boss) ++ "\""
         wait
         gameRender newLvls idx grd newPos plr -- if boss is defeated the go back to the main game loop (with the new position)
