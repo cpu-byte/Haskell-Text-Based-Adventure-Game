@@ -124,9 +124,9 @@ rawSetAtPos elm idx (x:xs) i final
     | idx == i  = rawSetAtPos elm idx xs (i + 1) (elm:final)
     | otherwise = rawSetAtPos elm idx xs (i + 1) (x:final)
 
--- example:
--- purpose:
--- process: 
+-- example: intercalate "\n" ["hello", "there"] = "hello\nthere"
+-- purpose: tie up a list of elements that contains a special value in between
+-- process: get the first item from the list, add the seperator value after it, and add that into a pre-existing list. that list is a recursion method with the rest of the list and the same seperator
 intercalate s [] = []
 intercalate s (x:xs) = x ++ s ++ (intercalate s xs)
 
