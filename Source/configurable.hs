@@ -2,17 +2,17 @@
 -- configurable.hs
 --- all game content. without this file, the game would just be an engine without any "game"
 
-module Configurable
+module Source.Configurable
 ( entities
 , lvls
 , startingHealth
 , startingInventory
 ) where
 
-import Types
-import Level
-import Boss
-import Entity
+import Source.Types
+import Source.Level
+import Source.Boss
+import Source.Entity
 
 ---
 ---     ENTITY DECLARATIONS

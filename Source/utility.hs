@@ -2,7 +2,7 @@
 -- utility.hs
 --- holds common and misc. functions used by the program
 
-module Utility
+module Source.Utility
 ( update
 , wait
 , clear

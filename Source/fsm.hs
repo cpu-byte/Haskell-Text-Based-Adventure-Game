@@ -2,7 +2,7 @@
 -- fsm.hs
 ---- primitive finite state machine with states and paths (transitions) used in the game
 
-module FSM
+module Source.FSM
 ( State
 , Path
 , newState
@@ -13,7 +13,7 @@ module FSM
 , getPathTo
 ) where
 
-import Types
+import Source.Types
 
 ---
 ---     STATE, DATA TYPE

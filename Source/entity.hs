@@ -2,7 +2,7 @@
 -- entity.hs
 --- module contains the entity data type and all relevent functions
 
-module Entity
+module Source.Entity
 ( Entity
 , newWeapon
 , newEquipment
@@ -22,8 +22,8 @@ module Entity
 , filterEnt
 ) where
 
-import Utility
-import Types
+import Source.Utility
+import Source.Types
 
 
 --- 

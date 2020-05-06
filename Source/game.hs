@@ -2,22 +2,22 @@
 -- game.hs
 --- holds the main structure of the game, including the game initiation, movement and combat.
 
-module Game
+module Source.Game
 ( start
 ) where
 
 import System.IO -- required for hidden user input, used in level navigation
-import Boss
-import Player
-import Entity
-import FSM
-import Parser
-import Utility
-import Movement
-import Level
-import Render
-import Configurable
-import Abilities
+import Source.Boss
+import Source.Player
+import Source.Entity
+import Source.FSM
+import Source.Parser
+import Source.Utility
+import Source.Movement
+import Source.Level
+import Source.Render
+import Source.Configurable
+import Source.Abilities
 
 
 

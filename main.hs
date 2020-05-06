@@ -26,7 +26,7 @@ The objective of the game is to navigate through a series of levels to get to th
 
 -}
 
-import Game
+import Source.Game
 
 main :: IO ()
 main = start

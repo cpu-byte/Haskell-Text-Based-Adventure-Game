@@ -2,7 +2,7 @@
 -- parser.hs
 --- module holding all functions to do with the parsing of the user command
 
-module Parser
+module Source.Parser
 ( processCommand
 , findPath
 , filterWrds
@@ -11,10 +11,10 @@ module Parser
 , parseCommand
 ) where
 
-import FSM
-import Utility
-import Entity
-import Configurable
+import Source.FSM
+import Source.Utility
+import Source.Entity
+import Source.Configurable
 
 -- example: parseCommand "pick up sword" = "Take"
 -- purpose: initiate the sequence of commands which are necessary for finding out what state the game should be in

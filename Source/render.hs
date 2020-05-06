@@ -2,13 +2,13 @@
 -- render.hs
 --- includes functions regarding the displaying of the level grid on the console
 
-module Render
+module Source.Render
 ( render
 , refresh
 ) where
 
-import Types
-import Utility
+import Source.Types
+import Source.Utility
 
 -- example: render ["...","...","..."] = "\n...\n...\n...\n"
 -- purpose: this function is used for displaying the level grid to the console window

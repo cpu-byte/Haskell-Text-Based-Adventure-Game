@@ -2,7 +2,7 @@
 -- boss.hs
 --- contains the boss data type and includes all relevant functions
 
-module Boss
+module Source.Boss
 ( Boss
 , newBoss
 , getBossName
@@ -17,7 +17,7 @@ module Boss
 , isBossDefeated
 ) where
 
-import Types
+import Source.Types
 
 ---
 ---     BOSS, DATA TYPE

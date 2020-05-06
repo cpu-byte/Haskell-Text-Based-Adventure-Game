@@ -2,7 +2,7 @@
 -- types.hs
 --- hold all type information
 
-module Types
+module Source.Types
 ( Position
 , Grid
 , Name

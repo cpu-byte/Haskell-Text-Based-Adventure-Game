@@ -2,7 +2,7 @@
 -- player.hs
 --- hold the player data type with all relevant functions
 
-module Player
+module Source.Player
 ( Player
 , newPlayer
 , getPlayerName
@@ -18,8 +18,8 @@ module Player
 , isEquipped
 ) where
 
-import Entity
-import Types
+import Source.Entity
+import Source.Types
 
 
 ---

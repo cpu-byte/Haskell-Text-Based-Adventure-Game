@@ -2,7 +2,7 @@
 -- movement.hs
 --- helper functions for 2D list
 
-module Movement
+module Source.Movement
 ( validateMove
 , checkY
 , checkX
@@ -11,8 +11,8 @@ module Movement
 , translate
 ) where
 
-import Types
-import Utility
+import Source.Types
+import Source.Utility
 
 -- example: ["###","###","###"] (0, 2)
 -- purpose: used to check if the passed in positions are valid in relation to the grid

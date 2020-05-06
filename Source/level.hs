@@ -2,7 +2,7 @@
 -- level.hs
 --- hold the level data type and all revelent functions
 
-module Level
+module Source.Level
 ( Level
 , newLevel
 , getLevelOrgn
@@ -20,9 +20,9 @@ module Level
 , searchStash
 ) where
 
-import Entity
-import Boss
-import Types
+import Source.Entity
+import Source.Boss
+import Source.Types
 
 ---
 ---     LEVEL

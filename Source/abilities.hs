@@ -2,7 +2,7 @@
 -- abilities.hs
 --- contains all side abilities (except combat/attack) and the relevant functions
 
-module Abilities
+module Source.Abilities
 ( stashTake
 , stashDrop
 , displayStash
@@ -14,12 +14,12 @@ module Abilities
 , gameFinished
 ) where
 
-import Player
-import Entity
-import Configurable
-import Level
-import Utility
-import Types
+import Source.Player
+import Source.Entity
+import Source.Configurable
+import Source.Level
+import Source.Utility
+import Source.Types
 
 
 ---
