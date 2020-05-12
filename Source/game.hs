@@ -20,7 +20,6 @@ import Source.Configurable
 import Source.Abilities
 
 
-
 ---
 ---     START
 ---
@@ -149,7 +148,7 @@ gameCommand :: [Level] -> Int -> [String] -> (Int, Int) -> Player -> IO ()
 gameCommand lvls idx grd pos plr = do
 
     -- get the input from the user
-    putStr "> "
+    putStr "/"
     hSetEcho stdin True
     command <- getLine
 
@@ -240,7 +239,7 @@ gameCombat lvls idx grd pos plr newPos = do
     gameCombatStats plr $ getLevelBoss $ getLvl idx lvls
 
     -- retrieve the user command
-    putStr "\nWhat would you like to do?\n> "
+    putStr "\nWhat would you like to do?\n/"
     hSetEcho stdin True
     command <- getLine
 
