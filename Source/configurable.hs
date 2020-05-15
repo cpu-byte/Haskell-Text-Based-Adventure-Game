@@ -78,7 +78,7 @@ entities = [entity001
 -- notes:
 --- syntax for the creation of a level: newLevel (origin position) (position to go to previous level) (position to go to the next level) (description of the level) (grid layout) (position of the stash) (stash contents) (boss content)
 --- syntax for the creation of a boss: newBoss (boss name) (position of the boss on the grid) (attack damage) (health) (restored health after player is defeated)
---- more comprahensive level andboss explaination can be found in their respective files
+--- more comprahensive level and boss explaination can be found in their respective files
 
 --  LEVEL 0
 lvl0 :: Level
