@@ -1,6 +1,6 @@
 
 -- entity.hs
---- module contains the entity data type and all relevent functions
+--- module contains the entity data type and all relevant functions
 
 module Source.Entity
 ( Entity
@@ -36,7 +36,7 @@ data Entity = Weapon    Name Worth Damage
             | Equipment Name Worth Protection
             | Item      Name Worth deriving (Eq, Show)
 
--- purpose: this function is used when creating the datatype
+-- purpose: these functions are used when creating the datatype
 -- process: the input of the function is used for the creation of the data type
 -- example: newWeapon "sword" 100 20
 newWeapon :: Name -> Worth -> Damage -> Entity
@@ -74,7 +74,7 @@ getEquipmentProtection (Equipment _ _ protection) = protection
 
 -- example: strEntity myWeapon
 -- purpose: before directly getting the string, this function provides some pre-sets which are applied to the strEntityRaw/Val function. presets depend if the item contains a special value: either damage or protection
--- process: using the strEntityRaw function, pass all parameters forward to the function in addition to some additional
+-- process: using the strEntityRaw function, pass all parameters forward to the function in addition to some additional values
 strEntity :: Entity -> [Char]
 strEntity (Weapon name worth dmg) =
     strEntityRawVal name worth dmg "damage"
@@ -90,22 +90,22 @@ gatherEntities [] = []
 gatherEntities (x:xs) = ((strEntity x) ++ "\n") ++ (gatherEntities xs)
 
 -- example: strEntityRaw "Short Sword" 100
--- purpose: return a formatted string ready for rendering on the console window
+-- purpose: return a formatted string ready for rendering on the console window (used for items)
 -- process: using concatenation, combine passed in data with characters
 strEntityRaw :: Show a => [Char] -> a -> [Char]
 strEntityRaw name worth =
     "  " ++ name ++ ", Worth $" ++ (show $ worth :: String)
 
 -- example: strEntityRawVal "Short Sword" 100 "Damage" 20
--- purpose: return a formatted string ready for rendering on the console window
--- process: using concatenation, combine passed in data with characters. additionally, add an value with a specific name in the middle of the string.
+-- purpose: return a formatted string ready for rendering on the console window (used for weapons and equipment)
+-- process: using concatenation, combine passed in data with characters. additionally, add a value with a specific name in the middle of the string.
 strEntityRawVal :: (Show a1, Show a2) => [Char] -> a2 -> a1 -> [Char] -> [Char]
 strEntityRawVal name worth val txt =
     "  " ++ name ++ ", " ++ (show $ val :: String) ++ " " ++ txt ++ ", Worth $" ++ (show $ worth :: String)
 
 -- example: entityWithWrdAmt [Entity, Entity] = [(Entity, 3),(Entity, 1)]
 -- purpose: this function is used for figuring out how many of the ending words need to be taken from the user input to compare with the items in the game.
--- process: for each entity in the list has its name split into the number of words. that value is combained with that actual entity with a pair 
+-- process: for each entity in the list has its name split into the number of words. that value is combined  with that actual entity with a pair 
 entityWithWrdAmt :: [Entity] -> [(Entity, Int)]
 entityWithWrdAmt ents = [ (x, length $ split $ getEntityName x) | x <- ents]
 

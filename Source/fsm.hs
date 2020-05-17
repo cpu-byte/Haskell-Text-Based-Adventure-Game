@@ -20,7 +20,7 @@ import Source.Types
 ---
 
 -- syntax: State "someActionName"
--- purpose: within the finite state machine scope, states make the end points of paths. each state will have a string which will collerates to an action that can be compared
+-- purpose: within the finite state machine scope, states make the end points of paths. each state will have a string which will correlates to an action that can be compared
 data State = State Action deriving (Eq, Show)
 
 -- example: newState "examine"
@@ -40,12 +40,9 @@ getStateAction (State action) = action
 ---     PATH, DATA TYPE
 ---
 
--- defined types used in the data constructor
-type Term = String
-
 -- syntax: Path currentState term stateWhenTerm
--- purpose: within the finite state machine scope, the paths is what connects the states together. paths are executed on the basis of the term used.
--- notes: typically these are refered to as "transitions" but I opted for a shorter defintion
+-- purpose: within the finite state machine scope, the paths are what connects the states together. paths are executed on the basis of the term used.
+-- notes: typically these are referred to as "transitions" but I opted for a shorter definition
 data Path = Path State Term State deriving (Eq, Show)
 
 -- example: newPath (newState "idle") "hit" (newState "fight")

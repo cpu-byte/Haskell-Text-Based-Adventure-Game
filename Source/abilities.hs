@@ -28,7 +28,7 @@ import Source.Types
 
 -- example: stashTake (1, 2) myLvl myPlr "pick up the short sword"
 -- purpose: take an item from the stash and place it in the player's inventory
--- process: this function primiarly checks if the passed position (where the user is) is a stash, if it is, proceed by calling the handleStashTake function
+-- process: this function primarily  checks if the passed position (where the user is) is a stash, if it is, proceed by calling the handleStashTake function
 stashTake :: Position -> Level -> Player -> [Char] -> ((Level, Player), [Char])
 stashTake pos lvl plr cmd
     | onStash pos lvl = handleStashTake lvl plr cmd
@@ -143,7 +143,7 @@ equipItemInv player items
 
 -- example: healPlayer myPlr = myPlr (now with 100 hp)
 -- purpose: to refill the health points to 100
--- process: first check if the user is on 100hp, if so, prompt a message saying so. otherwise, return a the player with 100 health and a appropriate message
+-- process: first check if the user is on 100hp, if so, prompt a message saying so. otherwise, return the player with 100 health and an appropriate message
 healPlayer :: Player -> (Player, [Char])
 healPlayer player
     | getPlayerHealth player == 100 = (player, "You have full health.")

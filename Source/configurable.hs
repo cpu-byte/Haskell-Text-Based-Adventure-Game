@@ -41,7 +41,7 @@ entity014 = newEquipment    "Steel Chestplate"                      315     45
 entity015 = newItem         "Haskell Instruction Manual"            25
 entity016 = newWeapon       "Training Sword"                        20      15
 
--- purpose: to indicate how much 
+-- purpose: to indicate how much health the user spawns with.
 startingHealth :: Health
 startingHealth = 90
 

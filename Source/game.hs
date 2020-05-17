@@ -24,6 +24,7 @@ import Source.Abilities
 ---     START
 ---
 
+-- purpose: this is the entry point of the game, and is called from the main.hs file. This function establishes the main game state, e.g. levels, player, etc.
 start :: IO ()
 start = do
 
@@ -61,6 +62,7 @@ start = do
 ---     CORE
 ---
 
+-- purpose: compute the current level and display the grid to the console. then call the gameInput function
 -- notes:
 --- to identify the user on the grid, their first letter of the name they inputted is used.
 gameRender :: [Level] -> Int -> [String] -> (Int, Int) -> Player -> IO ()
@@ -92,6 +94,7 @@ gameInput lvls idx grd pos plr = do
         then gameCommand lvls idx grd pos plr
     else gameInput lvls idx grd pos plr
 
+-- purpose: calculates the potential position and checks for boss encounter or entry for another level
 -- notes:
 --- this function contains the transPos parameter which is the intended position the user wishes to go to. translated position as the axis change was already applied but might not be valid
 gameMove :: [Level] -> Int -> [String] -> (Int, Int) -> (Int, Int) -> Player -> IO ()
@@ -275,7 +278,7 @@ gameCombat lvls idx grd pos plr newPos = do
             wait
             gameCombat lvls idx grd pos plr newPos
 
--- purpose: handling when the user initates the attack
+-- purpose: handling when the user initiates the attack
 gameCombatPlrAttack :: [Level] -> Int -> [String] -> (Int, Int) -> Player -> (Int, Int) -> IO ()
 gameCombatPlrAttack lvls idx grd pos plr newPos = do
 
@@ -347,7 +350,7 @@ gameCombatBossAttack lvls idx grd pos plr newPos = do
         -- continue to the next stage of combat, wait for user input
         gameCombat lvls idx grd pos newPlr newPos
 
--- purpose: shows boss and player health inc. their equipment
+-- purpose: shows boss and player health including their equipment
 gameCombatStats :: Player -> Boss -> IO ()
 gameCombatStats plr boss = do
     -- healths

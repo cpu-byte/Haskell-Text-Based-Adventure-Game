@@ -1,6 +1,6 @@
 
 -- level.hs
---- hold the level data type and all revelent functions
+--- hold the level data type and all relevant functions
 
 module Source.Level
 ( Level

@@ -22,14 +22,14 @@ module Source.Utility
 ) where
 
 -- example: update True 0 1 = 1
--- purpose: quick way to extract one of two values depending on a boolean value. without this function, there was a need to implment a guard expression into each of the functions which used this methodology
+-- purpose: quick way to extract one of two values depending on a boolean value. without this function, there was a need to implement  a guard expression into each of the functions which used this methodology
 -- process: through guards, simple match the boolean parameter and return the equivalent value (second parameter: old when false, third parameter: new when true)
 update :: Bool -> p -> p -> p
 update valid old new | valid = new | otherwise = old
 
 -- example: wait
 -- purpose: slow the user down and require a key stroke before continuing with the program
--- process: print a statement to console to press an key while a x value is reading the input. no value is required, simply moving past the getLine will continue the parent algorithm
+-- process: print a statement to console to press a key while a x value is reading the input. no value is required, simply moving past the getLine will continue the parent algorithm
 wait :: IO ()
 wait = do
     putStrLn "\nPress enter to continue..."
@@ -43,7 +43,7 @@ clear :: IO ()
 clear = putStr "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 
 -- example: rawFilterInc [1, 3, 5] [1, 2, 3, 4, 5] [] = [1, 3, 5]
--- purpose: remove items in a list that don't beling to a set / make a list of items which belong in a set, 'include' items
+-- purpose: remove items in a list that don't belong to a set / make a list of items which belong in a set, 'include' items
 -- process: with guards, check if each value of the list to check exists in the set list, if it does, include it in the result
 rawFilterInc :: (Foldable t, Eq a) => t a -> [a] -> [a] -> [a]
 rawFilterInc set [] ys = reverse ys
@@ -126,7 +126,7 @@ rawSetAtPos elm idx (x:xs) i final
 
 -- example: intercalate "\n" ["hello", "there"] = "hello\nthere"
 -- purpose: tie up a list of elements that contains a special value in between
--- process: get the first item from the list, add the seperator value after it, and add that into a pre-existing list. that list is a recursion method with the rest of the list and the same seperator
+-- process: get the first item from the list, add the separator value after it, and add that into a pre-existing list. that list is a recursion method with the rest of the list and the same seperator
 intercalate s [] = []
 intercalate s (x:xs) = x ++ s ++ (intercalate s xs)
 

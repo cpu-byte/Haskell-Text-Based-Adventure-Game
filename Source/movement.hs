@@ -24,7 +24,7 @@ validateMove l p
 
 -- example: ["###","###","###"] (_, 2)
 -- purpose: ensure the player isn't trying to walk out of the playable map on the y axis
--- process: safely check if there is y many element in the array, if y is less than or greater than the limit
+-- process: safely check if there is y many elements in the array, if y is less than or greater than the limit
 checkY :: Foldable t => t a -> Position -> Bool
 checkY l (_, y)
     | y >= 0 && y <= (length l - 2)         = True
@@ -32,7 +32,7 @@ checkY l (_, y)
 
 -- example: ["###","###","###"] (0, 2)
 -- purpose: ensure the player isn't trying to walk out of the playable map on the x axis
--- process: assuming the existance of y, go that the y element and then safely check the item which in this case is the element on the x axis
+-- process: assuming the existence of y, go that the y element and then safely check the item which in this case is the element on the x axis
 checkX :: Foldable t => [t a] -> Position -> Bool
 checkX l (x, y)
     | x >= 0 && x <= (length (l !! y) - 1)  = True
@@ -54,7 +54,7 @@ translatable = ['w', 'W', 'a', 'A', 's', 'S', 'd', 'D']
 
 -- example: translate 'w' (0, 2) = (0, -1)
 -- purpose: translate the key pressed into updated positions
--- process: for each character, change the specific value in the position pair. this is after we introduce 
+-- process: for each character, change the specific value in the position pair.
 translate :: Char -> Position -> Position
 translate t (x, y)
     | s == 'w' = (x, y - 1)

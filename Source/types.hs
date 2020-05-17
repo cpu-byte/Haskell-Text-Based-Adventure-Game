@@ -14,6 +14,7 @@ module Source.Types
 , Damage
 , Protection
 , Action
+, Term
 ) where
 
 -- purpose: used to give a x and y axis on the grid
@@ -37,7 +38,7 @@ type Outro = String
 -- purpose: used to hold health for player, boss, etc. 
 type Health = Int
 
--- purpose: used to hold the worth of an weapon, equipment or item 
+-- purpose: used to hold the worth of a weapon, equipment or item 
 type Worth = Int
 
 -- purpose: used to hold the value of damage the weapon gives in an attack
@@ -48,3 +49,6 @@ type Protection = Int
 
 -- purpose: used to hold the state name (/ the action intended when ending on that state)
 type Action = String
+
+-- purpose: used in fsm as the value to transition from start to end in a path (transition)
+type Term = String

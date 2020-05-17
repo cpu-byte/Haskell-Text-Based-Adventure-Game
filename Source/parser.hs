@@ -61,7 +61,7 @@ excludes = ["at", "the", "stash", "in"] ++ gameItems entities
 
 -- example: validChrs "h3llo th3re" = "hllo thre"
 -- purpose: filter out all characters which aren't valid
--- process: with rawFilterInc(lude), supply the characers we wish to include as the first parameter, and the seond being the string. the last is the starting string
+-- process: with rawFilterInc(lude), supply the characters we wish to include as the first parameter, and the second being the string. the last is the starting string
 validChrs :: [Char] -> [Char]
 validChrs str =
     rawFilterInc (' ':(['A'..'Z'] ++ ['a'..'z'])) str []
@@ -90,21 +90,21 @@ helpState           = newState "Help"
 -- notes:
 --- to account for the middle states like the middle of "pick" and "up",
 --- intermediate states are created
-pickUpSubpath       = newState "None"
-lookAroundSubpath   = newState "None"
-layIntoState        = newState "None"
+pickUpState       = newState "None"
+lookAroundState   = newState "None"
+layIntoState      = newState "None"
 
 
 -- notes:
---- for the transitions (paths), a stating and ending state is specified in addition to the term which is what makes that path active and transfers the current state to the end state.
---- the parser FSM uses all paths combined which can be found at the bottom of this haskell file. paths are divded into each command, this is an optional step because I believe it will improve readability.
---- on the right hand side, the tick (square root symbol) is when the command is finalised. at an elipsis, there are more parts to the path
+--- for the transitions (paths), a starting and ending state is specified in addition to the term which is what makes that path active and transfers the current state to the end state.
+--- the parser FSM uses all paths combined which can be found at the bottom of this haskell file. paths are divided into each command; this is an optional step because I believe it will improve readability.
+--- on the right hand side, the tick (square root symbol) is when the command is finalised. at an ellipsis, there are more parts to the path
 
 -- take commands
 takePaths :: [Path]
 takePaths = [(newPath noneState                 "take"          takeState)              -- √
-            ,(newPath noneState                 "pick"          pickUpSubpath)          -- ...
-            ,(newPath pickUpSubpath             "up"            takeState)]             -- √
+            ,(newPath noneState                 "pick"          pickUpState)            -- ...
+            ,(newPath pickUpState               "up"            takeState)]             -- √
 
 -- drop commands
 dropPaths :: [Path]
@@ -114,8 +114,8 @@ dropPaths = [(newPath noneState                 "drop"          dropState)]     
 lookPaths :: [Path]
 lookPaths = [(newPath noneState                 "examine"       examineState)           -- √
             ,(newPath noneState                 "search"        examineState)           -- √
-            ,(newPath noneState                 "look"          lookAroundSubpath)      -- ...
-            ,(newPath lookAroundSubpath         "around"        examineState)]          -- √
+            ,(newPath noneState                 "look"          lookAroundState)        -- ...
+            ,(newPath lookAroundState           "around"        examineState)]          -- √
 
 -- heal commands
 healPaths :: [Path]
