@@ -295,7 +295,7 @@ gameCombatPlrAttack lvls idx grd pos plr newPos = do
     
     if isBossDefeated newBoss then do -- check if the boss has been defeated
         let -- if so, refresh the grid to include a representation of the boss as dead and pack that into the newLvl, and then newLvls constant 
-            newLvl = setLevelGrid newLvlWithBoss $ (refresh (getBossPos newBoss) '†' $ getLevelGrid $ getLvl idx lvls)
+            newLvl = setLevelGrid newLvlWithBoss $ (refresh (getBossPos newBoss) 'x' $ getLevelGrid $ getLvl idx lvls)
             newLvls = setAtPos newLvl idx lvls
         clear
         putStrLn $ "You defeated " ++ (getBossName boss) ++ "!" -- provide feedback on the boss the user has defeated
